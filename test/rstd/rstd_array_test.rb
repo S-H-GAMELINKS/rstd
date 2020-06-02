@@ -89,4 +89,19 @@ class RstdArrayTest < Minitest::Test
     assert_equal [], result
     assert_kind_of Array, result
   end
+
+  def test_rstd_array_delete_last
+    # Delete last element
+    result = @ary.delete_last
+    assert_equal [1, 2, 3, 4, 5, 6, 7, 8, 9], result
+    assert_kind_of Array, result
+
+    result = @ary.delete_last(3)
+    assert_equal [1, 2, 3, 4, 5, 6, 7], result
+    assert_kind_of Array, result
+
+    result = @ary.delete_last(100)
+    assert_equal [], result
+    assert_kind_of Array, result
+  end
 end
