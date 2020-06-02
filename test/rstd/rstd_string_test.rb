@@ -64,4 +64,15 @@ class RstdStringTest < Minitest::Test
     assert !result
     assert_kind_of FalseClass, result
   end
+
+  def test_rstd_string_join
+    # Add srting to end
+    result = @string.join("Foo")
+    assert_equal "Hello World!Foo", result
+    assert_kind_of String, result
+
+    result = @string.join("Bar")
+    assert_equal "Hello World!Bar", result
+    assert_kind_of String, result
+  end
 end
