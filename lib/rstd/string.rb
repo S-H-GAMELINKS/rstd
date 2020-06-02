@@ -19,5 +19,9 @@ module Rstd::RefineString
         self[-1]
       end
     end
+
+    def has?(pattern)
+      self.include?(pattern)
+    end
   end
 end
