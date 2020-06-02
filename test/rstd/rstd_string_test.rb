@@ -30,4 +30,27 @@ class RstdStringTest < Minitest::Test
     assert_equal "", result
     assert_kind_of String, result
   end
+
+  def test_rstd_string_last
+    # Get the string slice(begin to string end)
+    result = @string.last
+    assert_equal "!", result
+    assert_kind_of String, result
+    
+    result = @string.last(3)
+    assert_equal "ld!", result
+    assert_kind_of String, result
+
+    result = @string.last(100)
+    assert_equal "Hello World!", result
+    assert_kind_of String, result
+
+    result = @string.last(-1)
+    assert_equal "H", result
+    assert_kind_of String, result
+
+    result = @string.last(-100)
+    assert_equal "", result
+    assert_kind_of String, result
+  end
 end
