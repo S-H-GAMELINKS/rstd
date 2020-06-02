@@ -23,5 +23,9 @@ module Rstd
     def to_range
       0..(self.size - 1)
     end
+
+    def delete_first(length = 1)
+      self - self.first(length)
+    end
   end
 end
