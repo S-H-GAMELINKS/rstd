@@ -11,5 +11,9 @@ module Rstd
     def rsum(length = self.length)
       self.last(length).sum
     end
+
+    def lsum(length = self.length)
+      self.first(length).sum
+    end
   end
 end
