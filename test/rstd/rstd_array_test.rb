@@ -30,4 +30,16 @@ class RstdArrayTest < Minitest::Test
     assert_equal [10, 9, 8], result.last
     assert_kind_of Array, result
   end
+
+  def test_rstd_array_rsum
+    # Sum of value in Array(but it's rightside value's sum)
+    result = @ary.rsum
+    assert_equal 55, result
+
+    result = @ary.rsum(3)
+    assert_equal 27, result
+
+    result = @ary.rsum(100)
+    assert_equal 55, result
+  end
 end
