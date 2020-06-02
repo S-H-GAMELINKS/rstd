@@ -17,7 +17,7 @@ module Rstd
     end
 
     def rsort
-        self.sort.reverse
+      self.sort.reverse
     end
 
     def to_range
