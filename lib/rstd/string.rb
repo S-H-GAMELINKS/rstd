@@ -23,5 +23,9 @@ module Rstd::RefineString
     def has?(pattern)
       self.include?(pattern)
     end
+
+    def join(str)
+      self + str
+    end
   end
 end
