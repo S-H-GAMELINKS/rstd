@@ -60,4 +60,11 @@ class RstdArrayTest < Minitest::Test
     result = @ary.rsort
     assert_equal @ary.reverse, result
   end
+
+  def test_rstd_array_to_range
+    # Convert to Range
+    range = @ary.to_range
+    assert_equal (0..9), range
+    assert_kind_of Range, range
+  end
 end
