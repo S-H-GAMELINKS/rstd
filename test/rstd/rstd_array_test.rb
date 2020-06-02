@@ -35,30 +35,30 @@ class RstdArrayTest < Minitest::Test
     # Sum of value in Array(but it's rightside value's sum)
     result = @ary.rsum
     assert_equal 55, result
-    assert_kind_of Array, result
+    assert_kind_of Integer, result
 
     result = @ary.rsum(3)
     assert_equal 27, result
-    assert_kind_of Array, result
+    assert_kind_of Integer, result
 
     result = @ary.rsum(100)
     assert_equal 55, result
-    assert_kind_of Array, result
+    assert_kind_of Integer, result
   end
 
   def test_rstd_array_lsum
     # Sum of value in Array(but it's leftside value's sum)
     result = @ary.lsum
     assert_equal 55, result
-    assert_kind_of Array, result
+    assert_kind_of Integer, result
 
     result = @ary.lsum(3)
     assert_equal 6, result
-    assert_kind_of Array, result
+    assert_kind_of Integer, result
 
     result = @ary.lsum(100)
     assert_equal 55, result
-    assert_kind_of Array, result
+    assert_kind_of Integer, result
   end
 
   def test_rstd_array_rsort
