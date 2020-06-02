@@ -9,5 +9,15 @@ module Rstd::RefineString
         self[0]
       end
     end
+
+    def last(pos = 0)
+      if pos > 0
+        pos > self.size ? self[0..-1] : self[-pos..-1]
+      elsif pos < 0
+        -pos > self.size ? "" : self[0..-(pos + 1)]
+      else
+        self[-1]
+      end
+    end
   end
 end
