@@ -15,5 +15,9 @@ module Rstd
     def lsum(length = self.length)
       self.first(length).sum
     end
+
+    def rsort
+        self.sort.reverse
+    end
   end
 end
