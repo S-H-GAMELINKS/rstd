@@ -6,6 +6,7 @@ using Rstd::RefineString
 class RstdStringTest < Minitest::Test
   def setup
     @string = "Hello World!"
+    @lines = "Hello\nWorld!\nHello\nRuby\n"
   end
 
   def test_rstd_string_first
@@ -73,6 +74,13 @@ class RstdStringTest < Minitest::Test
 
     result = @string.join("Bar")
     assert_equal "Hello World!Bar", result
+    assert_kind_of String, result
+  end
+
+  def test_rstd_first_line
+    # Get first line of String
+    result = @lines.first_line
+    assert_equal "Hello\n", result
     assert_kind_of String, result
   end
 end
