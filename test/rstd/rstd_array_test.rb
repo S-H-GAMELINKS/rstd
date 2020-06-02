@@ -54,4 +54,10 @@ class RstdArrayTest < Minitest::Test
     result = @ary.lsum(100)
     assert_equal 55, result
   end
+
+  def test_rstd_array_rsort
+    # Sort value in Array, and reverse it
+    result = @ary.rsort
+    assert_equal @ary.reverse, result
+  end
 end
