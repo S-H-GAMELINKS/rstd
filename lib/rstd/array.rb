@@ -27,5 +27,9 @@ module Rstd
     def delete_first(length = 1)
       self - self.first(length)
     end
+
+    def delete_last(length = 1)
+      self - self.last(length)
+    end
   end
 end
