@@ -53,4 +53,15 @@ class RstdStringTest < Minitest::Test
     assert_equal "", result
     assert_kind_of String, result
   end
+
+  def test_rstd_string_has?
+    # Check include pattern more short than String#include?
+    result = @string.has?("Hell")
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @string.has?("Wrong")
+    assert !result
+    assert_kind_of FalseClass, result
+  end
 end
