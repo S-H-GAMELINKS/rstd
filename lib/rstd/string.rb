@@ -27,5 +27,9 @@ module Rstd::RefineString
     def join(str)
       self + str
     end
+
+    def first_line
+      self.lines.first
+    end
   end
 end
