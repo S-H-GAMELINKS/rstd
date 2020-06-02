@@ -7,5 +7,9 @@ module Rstd
         [self.first(length), self.last(length)]
       end
     end
+
+    def rsum(length = self.length)
+      self.last(length).sum
+    end
   end
 end
