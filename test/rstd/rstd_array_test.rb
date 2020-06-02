@@ -1,7 +1,7 @@
 require "test_helper"
 require "rstd"
 
-using Rstd
+using Rstd::RefineArray
 
 class RstdArrayTest < Minitest::Test
   def setup
