@@ -70,8 +70,8 @@ class RstdArrayTest < Minitest::Test
 
   def test_rstd_array_to_range
     # Convert to Range
-    range = @ary.to_range
-    assert_equal (0..9), range
-    assert_kind_of Range, range
+    result = @ary.to_range
+    assert_equal (0..9), result
+    assert_kind_of Range, result
   end
 end
