@@ -74,4 +74,19 @@ class RstdArrayTest < Minitest::Test
     assert_equal (0..9), result
     assert_kind_of Range, result
   end
+
+  def test_rstd_array_delete_first
+    # Delete first element
+    result = @ary.delete_first
+    assert_equal [2, 3, 4, 5, 6, 7, 8, 9, 10], result
+    assert_kind_of Array, result
+
+    result = @ary.delete_first(3)
+    assert_equal [4, 5, 6, 7, 8, 9, 10], result
+    assert_kind_of Array, result
+
+    result = @ary.delete_first(100)
+    assert_equal [], result
+    assert_kind_of Array, result
+  end
 end
