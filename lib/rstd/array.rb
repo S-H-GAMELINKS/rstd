@@ -19,5 +19,9 @@ module Rstd
     def rsort
         self.sort.reverse
     end
+
+    def to_range
+      0..(self.size - 1)
+    end
   end
 end
