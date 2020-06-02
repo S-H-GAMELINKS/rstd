@@ -1,4 +1,4 @@
-module Rstd
+module Rstd::RefineArray
   refine Array do
     def first_last(length = 1, reversed: false)
       if reversed
