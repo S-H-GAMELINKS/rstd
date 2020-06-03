@@ -7,5 +7,9 @@ module Rstd::RefineInteger
     def dec
       self.pred
     end
+
+    def mod(num)
+      self % num
+    end
   end
 end
