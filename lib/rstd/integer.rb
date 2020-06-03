@@ -3,5 +3,9 @@ module Rstd::RefineInteger
     def inc
       self.succ
     end
+
+    def dec
+      self.pred
+    end
   end
 end
