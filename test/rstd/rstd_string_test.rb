@@ -7,6 +7,7 @@ class RstdStringTest < Minitest::Test
   def setup
     @string = "Hello World!"
     @lines = "Hello\nWorld!\nHello\nRuby\n"
+    @number_str = "Hello0World!"
   end
 
   def test_rstd_string_first
@@ -89,5 +90,16 @@ class RstdStringTest < Minitest::Test
     result = @lines.last_line
     assert_equal "Ruby\n", result
     assert_kind_of String, result
+  end
+
+  def test_rstd_has_num?
+    # Check number is include string
+    result = @number_str.has_num?
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @string.has_num?
+    assert !result
+    assert_kind_of FalseClass, result
   end
 end
