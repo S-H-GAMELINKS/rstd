@@ -83,4 +83,11 @@ class RstdStringTest < Minitest::Test
     assert_equal "Hello\n", result
     assert_kind_of String, result
   end
+
+  def test_rstd_last_line
+    # Get last line of String
+    result = @lines.last_line
+    assert_equal "Ruby\n", result
+    assert_kind_of String, result
+  end
 end
