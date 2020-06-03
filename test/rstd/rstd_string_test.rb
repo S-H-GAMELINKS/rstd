@@ -109,4 +109,11 @@ class RstdStringTest < Minitest::Test
     assert_equal "World!\nHello\nRuby\n", result
     assert_kind_of String, result
   end
+
+  def test_delete_last_line
+    # Delete last line of string
+    result = @lines.delete_last_line
+    assert_equal "Hello\nWorld!\nHello\n", result
+    assert_kind_of String, result
+  end
 end
