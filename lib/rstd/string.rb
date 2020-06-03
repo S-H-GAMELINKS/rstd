@@ -39,5 +39,11 @@ module Rstd::RefineString
     def has_num?
       self =~ /\d/ ? true : false
     end
+
+    def delete_first_line
+      result = self.lines
+      result.shift
+      result.join
+    end
   end
 end
