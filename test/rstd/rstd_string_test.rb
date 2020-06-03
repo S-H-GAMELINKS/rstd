@@ -102,4 +102,11 @@ class RstdStringTest < Minitest::Test
     assert !result
     assert_kind_of FalseClass, result
   end
+
+  def test_delete_first_line
+    # Delete first line of string
+    result = @lines.delete_first_line
+    assert_equal "World!\nHello\nRuby\n", result
+    assert_kind_of String, result
+  end
 end
