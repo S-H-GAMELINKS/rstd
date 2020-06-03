@@ -31,5 +31,9 @@ module Rstd::RefineString
     def first_line
       self.lines.first
     end
+
+    def last_line
+      self.lines.last
+    end
   end
 end
