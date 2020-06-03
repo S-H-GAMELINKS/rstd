@@ -35,5 +35,9 @@ module Rstd::RefineString
     def last_line
       self.lines.last
     end
+
+    def has_num?
+      self =~ /\d/ ? true : false
+    end
   end
 end
