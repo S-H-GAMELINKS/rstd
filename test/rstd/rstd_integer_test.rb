@@ -8,7 +8,7 @@ class RstdIntegerTest < Minitest::Test
     @num = 42
   end
 
-  def test_rstd_inc
+  def test_rstd_integr_inc
     # Increment num
     result = @num.inc
     assert_equal 43, result
