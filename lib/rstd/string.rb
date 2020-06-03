@@ -45,5 +45,11 @@ module Rstd::RefineString
       result.shift
       result.join
     end
+
+    def delete_last_line
+      result = self.lines
+      result.pop
+      result.join
+    end
   end
 end
