@@ -6,6 +6,7 @@ using Rstd::RefineArray
 class RstdArrayTest < Minitest::Test
   def setup
     @ary = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    @dup_ary = [1, 1, 1, 1, 1]
   end
 
   def test_rstd_array_first_last
@@ -103,5 +104,16 @@ class RstdArrayTest < Minitest::Test
     result = @ary.delete_last(100)
     assert_equal [], result
     assert_kind_of Array, result
+  end
+
+  def test_rstd_array_all_values_dup?
+    # Check all values duplicate?
+    result = @ary.all_values_dup?
+    assert !result
+    assert_kind_of FalseClass, result
+
+    result = @dup_ary.all_values_dup?
+    assert result
+    assert_kind_of TrueClass, result
   end
 end

@@ -31,5 +31,9 @@ module Rstd::RefineArray
     def delete_last(length = 1)
       self - self.last(length)
     end
+
+    def all_values_dup?
+      self.uniq.size == 1 ? true : false
+    end
   end
 end
