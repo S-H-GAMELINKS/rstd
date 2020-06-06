@@ -133,4 +133,19 @@ class RstdArrayTest < Minitest::Test
     assert !result
     assert_kind_of FalseClass, result
   end
+
+  def test_rstd_array_present?
+    # Check Array value is present?
+    result = @nil_ary.present?
+    assert !result
+    assert_kind_of FalseClass, result
+
+    result = @empty_ary.present?
+    assert !result
+    assert_kind_of FalseClass, result
+
+    result = @ary.present?
+    assert result
+    assert_kind_of TrueClass, result
+  end
 end
