@@ -148,4 +148,19 @@ class RstdArrayTest < Minitest::Test
     assert result
     assert_kind_of TrueClass, result
   end
+
+  def test_rstd_array_blank?
+    # Check Array value is blank?
+    result = @nil_ary.blank?
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @empty_ary.blank?
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @ary.blank?
+    assert !result
+    assert_kind_of FalseClass, result
+  end
 end
