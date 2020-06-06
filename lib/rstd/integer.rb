@@ -11,5 +11,9 @@ module Rstd::RefineInteger
     def mod(num)
       self % num
     end
+
+    def pow(num = 2)
+      self**num
+    end
   end
 end

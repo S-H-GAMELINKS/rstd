@@ -40,4 +40,19 @@ class RstdIntegerTest < Minitest::Test
     assert_equal 0, result
     assert_kind_of Integer, result
   end
+
+  def test_rstd_integer_pow
+    # Powers num
+    result = @num.pow
+    assert_equal 42**2, result
+    assert_kind_of Integer, result
+
+    result = @num.pow(2)
+    assert_equal 42**2, result
+    assert_kind_of Integer, result
+
+    result = @num.pow(5)
+    assert_equal 42**5, result
+    assert_kind_of Integer, result
+  end
 end
