@@ -47,5 +47,9 @@ module Rstd::RefineArray
         true
       end
     end
+
+    def blank?
+      !self.present?
+    end
   end
 end
