@@ -39,5 +39,13 @@ module Rstd::RefineArray
     def all_nil?
       self.all_values_dup? && self.uniq.first.nil?
     end
+
+    def present?
+      if self.empty? || self.all_nil?
+        false
+      else
+        true
+      end
+    end
   end
 end
