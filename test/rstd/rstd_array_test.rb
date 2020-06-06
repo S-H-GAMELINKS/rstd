@@ -7,6 +7,8 @@ class RstdArrayTest < Minitest::Test
   def setup
     @ary = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     @dup_ary = [1, 1, 1, 1, 1]
+    @nil_ary = [nil, nil, nil, nil]
+    @empty_ary = []
   end
 
   def test_rstd_array_first_last
@@ -115,5 +117,20 @@ class RstdArrayTest < Minitest::Test
     result = @dup_ary.all_values_dup?
     assert result
     assert_kind_of TrueClass, result
+  end
+
+  def test_rstd_array_all_nil?
+    # Check Array values are nil?
+    result = @nil_ary.all_nil?
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @ary.all_nil?
+    assert !result
+    assert_kind_of FalseClass, result
+
+    result = @empty_ary.all_nil?
+    assert !result
+    assert_kind_of FalseClass, result
   end
 end
