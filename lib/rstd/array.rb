@@ -35,5 +35,9 @@ module Rstd::RefineArray
     def all_values_dup?
       self.uniq.size == 1 ? true : false
     end
+
+    def all_nil?
+      self.all_values_dup? && self.uniq.first.nil?
+    end
   end
 end
