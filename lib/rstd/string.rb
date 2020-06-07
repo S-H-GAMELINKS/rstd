@@ -51,5 +51,9 @@ module Rstd::RefineString
       result.pop
       result.join
     end
+
+    def present?
+      !self.empty?
+    end
   end
 end
