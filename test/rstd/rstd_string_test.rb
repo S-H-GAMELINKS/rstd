@@ -8,6 +8,7 @@ class RstdStringTest < Minitest::Test
     @string = "Hello World!"
     @lines = "Hello\nWorld!\nHello\nRuby\n"
     @number_str = "Hello0World!"
+    @empty_str = ""
   end
 
   def test_rstd_string_first
@@ -115,5 +116,20 @@ class RstdStringTest < Minitest::Test
     result = @lines.delete_last_line
     assert_equal "Hello\nWorld!\nHello\n", result
     assert_kind_of String, result
+  end
+
+  def test_rstd_string_present?
+    # Check String value is present?
+    result = @empty_str.present?
+    assert !result
+    assert_kind_of FalseClass, result
+
+    result = @lines.present?
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @string.present?
+    assert result
+    assert_kind_of TrueClass, result
   end
 end
