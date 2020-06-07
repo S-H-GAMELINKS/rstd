@@ -55,5 +55,9 @@ module Rstd::RefineString
     def present?
       !self.empty?
     end
+
+    def blank?
+      self.empty?
+    end
   end
 end

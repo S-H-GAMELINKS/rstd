@@ -132,4 +132,19 @@ class RstdStringTest < Minitest::Test
     assert result
     assert_kind_of TrueClass, result
   end
+
+  def test_rstd_string_blank?
+    # Check String value is blank?
+    result = @empty_str.blank?
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @lines.blank?
+    assert !result
+    assert_kind_of FalseClass, result
+
+    result = @string.blank?
+    assert !result
+    assert_kind_of FalseClass, result
+  end
 end
