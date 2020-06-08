@@ -11,6 +11,7 @@ class RstdArrayTest < Minitest::Test
     @empty_ary = []
     @true_ary = [1, 2, true]
     @false_ary = [1, 2, false]
+    @str_ary = ["1", 2, 3]
   end
 
   def test_rstd_array_first_last
@@ -177,6 +178,17 @@ class RstdArrayTest < Minitest::Test
     assert_kind_of TrueClass, result
 
     result = @false_ary.has_bool?
+    assert result
+    assert_kind_of TrueClass, result
+  end
+
+  def test_rstd_array_has_str?
+    # Check Array has String value?
+    result = @ary.has_str?
+    assert !result
+    assert_kind_of FalseClass, result
+
+    result = @str_ary.has_str?
     assert result
     assert_kind_of TrueClass, result
   end
