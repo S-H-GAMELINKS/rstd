@@ -192,4 +192,15 @@ class RstdArrayTest < Minitest::Test
     assert result
     assert_kind_of TrueClass, result
   end
+
+  def test_rstd_array_has_num?
+    # Check Array has Numeric value?
+    result = @nil_ary.has_num?
+    assert !result
+    assert_kind_of FalseClass, result
+
+    result = @true_ary.has_num?
+    assert result
+    assert_kind_of TrueClass, result
+  end
 end

@@ -59,5 +59,9 @@ module Rstd::RefineArray
     def has_str?
       self.map{|v| v.is_a?(String) }.count(true) != 0
     end
+
+    def has_num?
+      self.map{|v| v.is_a?(Integer) || v.is_a?(Float) || v.is_a?(Complex) || v.is_a?(Rational)}.count(true) != 0
+    end
   end
 end
