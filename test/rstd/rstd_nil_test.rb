@@ -18,4 +18,15 @@ class RstdNilTest < Minitest::Test
     assert result
     assert_kind_of TrueClass, result
   end
+
+  def test_rstd_nil_blank?
+    # Check nil is blank? And, return true.
+    result = @nil.blank?
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = !@nil.blank?
+    assert !result
+    assert_kind_of FalseClass, result
+  end
 end
