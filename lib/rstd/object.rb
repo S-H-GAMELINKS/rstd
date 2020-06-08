@@ -3,5 +3,9 @@ module Rstd::RefineObject
     def present?
       true
     end
+
+    def blank?
+      false
+    end
   end
 end
