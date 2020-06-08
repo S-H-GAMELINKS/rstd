@@ -55,5 +55,9 @@ module Rstd::RefineArray
     def has_bool?
       self.include?(true) || self.include?(false)
     end
+
+    def has_str?
+      self.map{|v| v.is_a?(String) }.count(true) != 0
+    end
   end
 end
