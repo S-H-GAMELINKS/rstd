@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{ useful implementation for ruby }
   spec.description   = %q{ useful implementation for ruby }
   spec.homepage      = "https://github.com/S-H-GAMELINKS/rstd"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/S-H-GAMELINKS/rstd"
