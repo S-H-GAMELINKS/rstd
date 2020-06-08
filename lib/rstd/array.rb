@@ -51,5 +51,9 @@ module Rstd::RefineArray
     def blank?
       !self.present?
     end
+
+    def has_bool?
+      self.include?(true) || self.include?(false)
+    end
   end
 end

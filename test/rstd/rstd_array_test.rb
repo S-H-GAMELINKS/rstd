@@ -9,6 +9,8 @@ class RstdArrayTest < Minitest::Test
     @dup_ary = [1, 1, 1, 1, 1]
     @nil_ary = [nil, nil, nil, nil]
     @empty_ary = []
+    @true_ary = [1, 2, true]
+    @false_ary = [1, 2, false]
   end
 
   def test_rstd_array_first_last
@@ -162,5 +164,20 @@ class RstdArrayTest < Minitest::Test
     result = @ary.blank?
     assert !result
     assert_kind_of FalseClass, result
+  end
+
+  def test_rstd_array_has_bool?
+    # Check Array value has bool?
+    result = @ary.has_bool?
+    assert !result
+    assert_kind_of FalseClass, result
+
+    result = @true_ary.has_bool?
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @false_ary.has_bool?
+    assert result
+    assert_kind_of TrueClass, result
   end
 end
