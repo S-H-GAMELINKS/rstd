@@ -4,6 +4,7 @@ require "rstd/string"
 require "rstd/integer"
 require "rstd/object"
 require "rstd/nil"
+require "rstd/true"
 
 module Rstd
   class Error < StandardError; end
