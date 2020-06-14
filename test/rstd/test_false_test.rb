@@ -18,4 +18,15 @@ class RstdFalseTest < Minitest::Test
     assert result
     assert_kind_of TrueClass, result
   end
+
+  def test_rstd_false_blank?
+    # Check FalseClass is blank?
+    result = @false.blank?
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = !@false.blank?
+    assert !result
+    assert_kind_of FalseClass, result
+  end
 end
