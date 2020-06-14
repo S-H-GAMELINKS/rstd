@@ -3,5 +3,9 @@ module Rstd::RefineFalse
     def present?
       false
     end
+
+    def blank?
+      true
+    end
   end
 end
