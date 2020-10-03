@@ -147,4 +147,15 @@ class RstdStringTest < Minitest::Test
     assert !result
     assert_kind_of FalseClass, result
   end
+
+  def test_rstd_string_ords
+    # Return each char ord
+    result = @string.ords
+    index = 0
+
+    @string.each_char do |char|
+      assert_equal char.ord, result[index]
+      index += 1
+    end
+  end
 end
