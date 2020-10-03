@@ -59,5 +59,11 @@ module Rstd::RefineString
     def blank?
       self.empty?
     end
+
+    def ords
+      self.each_char.map do |char|
+        char.ord
+      end
+    end
   end
 end
