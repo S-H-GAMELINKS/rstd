@@ -1,6 +1,13 @@
 name: Ubuntu
 
-on: [workflow_dispatch, push, pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
 
 jobs:
   test:
