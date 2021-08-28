@@ -1,4 +1,9 @@
+require 'rstd/integer'
+
+using Rstd::RefineInteger
+
 module Rstd::RefineString
+
   refine String do
     def first(pos = 0)
       if pos > 0
@@ -50,6 +55,10 @@ module Rstd::RefineString
       result = self.lines
       result.pop
       result.join
+    end
+
+    def delete_with_index(index)
+      self[...index] + self[(index.inc)...]
     end
 
     def present?
