@@ -32,6 +32,10 @@ module Rstd::RefineArray
       self - self.last(length)
     end
 
+    def all?(value)
+      self.all_values_dup? && self.first == value
+    end
+
     def all_values_dup?
       self.uniq.size == 1 ? true : false
     end
