@@ -118,6 +118,13 @@ class RstdStringTest < Minitest::Test
     assert_kind_of String, result
   end
 
+  def test_delete_with_index
+    # Delete string with index
+    result = @string.delete_with_index(5)
+    assert_equal "HelloWorld!", result
+    assert_kind_of String, result
+  end
+
   def test_rstd_string_present?
     # Check String value is present?
     result = @empty_str.present?
