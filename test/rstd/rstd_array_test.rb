@@ -111,6 +111,21 @@ class RstdArrayTest < Minitest::Test
     assert_kind_of Array, result
   end
 
+  def test_rstd_array_all?
+    # Check all values is same to given argument
+    result = @nil_ary.all?(nil)
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @dup_ary.all?(1)
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @ary.all?(nil)
+    assert !result
+    assert_kind_of FalseClass, result
+  end
+
   def test_rstd_array_all_values_dup?
     # Check all values duplicate?
     result = @ary.all_values_dup?
