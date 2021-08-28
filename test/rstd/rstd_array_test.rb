@@ -203,4 +203,15 @@ class RstdArrayTest < Minitest::Test
     assert result
     assert_kind_of TrueClass, result
   end
+
+  def test_rstd_array_has_nil?
+    # Check Array has nil value?
+    result = @nil_ary.has_nil?
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @ary.has_nil?
+    assert !result
+    assert_kind_of FalseClass, result
+  end
 end
