@@ -65,5 +65,9 @@ module Rstd::RefineString
         char.ord
       end
     end
+
+    def char_count
+      self.each_char.map.size
+    end
   end
 end
