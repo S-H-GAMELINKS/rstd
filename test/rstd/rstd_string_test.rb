@@ -158,4 +158,11 @@ class RstdStringTest < Minitest::Test
       index += 1
     end
   end
+
+  def test_rstd_string_char_count
+    # Count character count from String
+    result = @string.char_count
+    assert_equal @string.each_char.map.size, result
+    assert_kind_of Integer, result
+  end
 end
