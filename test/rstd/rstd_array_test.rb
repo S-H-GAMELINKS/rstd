@@ -182,6 +182,33 @@ class RstdArrayTest < Minitest::Test
     assert_kind_of FalseClass, result
   end
 
+  def test_rstd_array_has?
+    # Check Array has argument value?
+    result = @ary.has?(true)
+    assert !result
+    assert_kind_of FalseClass, result
+
+    result = @true_ary.has?(true)
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @ary.has?(5)
+    assert result
+    assert_kind_of TrueClass, result
+    
+    result = @ary.has?('1')
+    assert !result
+    assert_kind_of FalseClass, result
+
+    result = @str_ary.has?('1')
+    assert result
+    assert_kind_of TrueClass, result
+
+    result = @str_ary.has?('5')
+    assert !result
+    assert_kind_of FalseClass, result
+  end
+
   def test_rstd_array_has_bool?
     # Check Array value has bool?
     result = @ary.has_bool?
