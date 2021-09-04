@@ -32,12 +32,8 @@ class RstdTrueTest < Minitest::Test
 
   def test_rstd_true_true?
     # Check variable is true?
-    result = @true
+    result = @true.true?
     assert result
     assert_kind_of TrueClass, result
-
-    result = !@true
-    assert !result
-    assert_kind_of FalseClass, result
   end
 end
