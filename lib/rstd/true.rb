@@ -7,5 +7,9 @@ module Rstd::RefineTrue
     def blank?
       false
     end
+
+    def true?
+      true
+    end
   end
 end
