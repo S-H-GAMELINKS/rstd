@@ -21,4 +21,11 @@ class RstdObjectTest < Minitest::Test
     assert !result
     assert_kind_of FalseClass, result
   end
+
+  def test_rstd_object_true?
+    # Check object is true?
+    result = @obj.true?
+    assert result
+    assert_kind_of TrueClass, result
+  end
 end

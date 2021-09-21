@@ -7,5 +7,9 @@ module Rstd::RefineObject
     def blank?
       false
     end
+
+    def true?
+      true
+    end
   end
 end
