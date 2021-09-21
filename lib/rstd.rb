@@ -6,6 +6,7 @@ require "rstd/object"
 require "rstd/nil"
 require "rstd/true"
 require "rstd/false"
+require "rstd/hash"
 
 module Rstd
   class Error < StandardError; end
