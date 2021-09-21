@@ -11,5 +11,9 @@ module Rstd::RefineObject
     def true?
       true
     end
+
+    def false?
+      false
+    end
   end
 end
