@@ -21,6 +21,10 @@ class RstdObjectTest < Minitest::Test
     assert_raises NotImplementedError do
       @obj.refine_method?(:halo)
     end
+
+    result = @obj.refine_method?(:send)
+    assert !result
+    assert_kind_of FalseClass, result
   end
 
   def test_rstd_object_present?
