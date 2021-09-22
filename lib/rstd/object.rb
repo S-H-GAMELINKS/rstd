@@ -1,5 +1,6 @@
 module Rstd::RefineObject
   refine Object do
+
     def refine_method?(method)
       if method.is_a?(Symbol)
         if self.respond_to?(method)
@@ -12,6 +13,7 @@ module Rstd::RefineObject
         raise ArgumentError, "you can given arguments only Symbol"
       end
     end
+
     def present?
       true
     end
