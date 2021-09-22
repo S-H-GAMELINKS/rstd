@@ -8,6 +8,21 @@ class RstdObjectTest < Minitest::Test
     @obj = Object.new
   end
 
+  def test_rstd_object_refine_method?
+    # Check given method is refined?
+    result = @obj.refine_method?(:present?)
+    assert result
+    assert_kind_of TrueClass, result
+
+    assert_raises ArgumentError do
+      @obj.refine_method?("present?")
+    end
+
+    assert_raises NotImplementedError do
+      @obj.refine_method?(:halo)
+    end
+  end
+
   def test_rstd_object_present?
     # Check object is present?
     result = @obj.present?
