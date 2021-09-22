@@ -10,21 +10,27 @@ class RstdObjectTest < Minitest::Test
 
   def test_rstd_object_refine_method?
     # Check given method is refined?
-    result = @obj.refine_method?(:present?)
-    assert result
-    assert_kind_of TrueClass, result
+    if RUBY_VERSION > "2.4" && "2.7" > RUBY_VERSION
+      assert_raises RuntimeError do
+        @obj.refine_method?(:halo)
+      end
+    else
+      result = @obj.refine_method?(:present?)
+      assert result
+      assert_kind_of TrueClass, result
 
-    assert_raises ArgumentError do
-      @obj.refine_method?("present?")
+      assert_raises ArgumentError do
+        @obj.refine_method?("present?")
+      end
+
+      assert_raises NotImplementedError do
+        @obj.refine_method?(:halo)
+      end
+
+      result = @obj.refine_method?(:send)
+      assert !result
+      assert_kind_of FalseClass, result
     end
-
-    assert_raises NotImplementedError do
-      @obj.refine_method?(:halo)
-    end
-
-    result = @obj.refine_method?(:send)
-    assert !result
-    assert_kind_of FalseClass, result
   end
 
   def test_rstd_object_present?
