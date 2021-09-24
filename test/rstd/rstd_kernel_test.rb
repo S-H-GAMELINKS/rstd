@@ -4,9 +4,9 @@ require "rstd"
 using Rstd::RefineKernel
 
 class RstdKernelTest < Minitest::Test
-  using refine_method(Object, :halo, ->(args) { return args})
-  using refine_method(Integer, :inc, ->() { self + 1})
-  using refine_method(Array, :pow, ->(num = 2){ self.map{|v| v ** num }})
+  using refine_method(Object, :halo){|args| return args}
+  using refine_method(Integer, :inc){ self + 1}
+  using refine_method(Array, :pow){|num = 2| self.map{|v| v ** num }}
 
   def test_rstd_kernel_refine_method
     # Dynamic refinements
