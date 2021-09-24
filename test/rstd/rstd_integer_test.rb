@@ -55,4 +55,24 @@ class RstdIntegerTest < Minitest::Test
     assert_equal 42**5, result
     assert_kind_of Integer, result
   end
+
+  using Integer.refine_method(:sum){|*args|
+    return self if args.empty?
+    result = self
+    args.each{|arg| result += arg }
+    return result
+  }
+
+  def test_rstd_integer_refine_method
+    # Dynamic refinements
+    result = @num.sum
+
+    assert_equal 42, result
+    assert_kind_of Integer, result
+
+    result = @num.sum(1, 2, 3, 4, 5)
+
+    assert_equal 57, result
+    assert_kind_of Integer, result
+  end
 end
