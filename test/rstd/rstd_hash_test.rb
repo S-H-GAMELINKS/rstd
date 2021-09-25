@@ -25,4 +25,20 @@ class RstdHashTest < Minitest::Test
     assert !result
     assert_kind_of FalseClass, result
   end
+
+  using Hash.refine_method(:all_key){ return self.keys }
+
+  def test_rstd_hash_refine_method
+    # Dynamic refinements
+    result = @hash.all_key
+
+    assert_equal [:key], result
+    assert_kind_of Array, result
+
+    result = {}.all_key
+
+    assert_equal 0, result.size
+    assert_equal [], result
+    assert_kind_of Array, result
+  end
 end
