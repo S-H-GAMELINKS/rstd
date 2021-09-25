@@ -1,5 +1,16 @@
 module Rstd::RefineArray
   refine Array do
+
+    class << Array
+      def refine_method(method_id, &expr)
+        Module.new do
+          refine Array do
+            define_method(method_id, &expr)
+          end
+        end
+      end
+    end
+
     def first_last(length = 1, reversed: false)
       if reversed
         [self.first(length).reverse, self.last(length).reverse]

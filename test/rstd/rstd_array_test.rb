@@ -256,4 +256,24 @@ class RstdArrayTest < Minitest::Test
     assert !result
     assert_kind_of FalseClass, result
   end
+
+  using Array.refine_method(:pow){|num = 1|
+    self.map{|value|
+      value ** num
+    }
+  }
+
+  def test_rstd_array_refine_method
+    # Dynamic refinements
+    result = @ary.pow
+
+    assert_equal 10, result.size
+    assert_kind_of Array, result
+    assert_equal [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], result
+
+    result = @ary.pow(2)
+
+    assert_kind_of Array, result
+    assert_equal [1, 4, 9, 16, 25, 36, 49, 64, 81, 100], result
+  end
 end
