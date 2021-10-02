@@ -10,7 +10,7 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task :doc do
-  sh "bundle exec yardoc 'lib/**/*.rb'"
+  sh "bundle exec yardoc 'lib/**/*.rb' -0 ./docs"
 end
 
 task :default => :test
