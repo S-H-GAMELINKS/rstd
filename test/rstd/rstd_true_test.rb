@@ -36,4 +36,16 @@ class RstdTrueTest < Minitest::Test
     assert result
     assert_kind_of TrueClass, result
   end
+
+  using TrueClass.refine_method(:halo){
+    return :HALO
+  }
+
+  def test_rstd_true_refine_method
+    # Dynamic refinements
+    result = @true.halo
+
+    assert_equal :HALO, result
+    assert_kind_of Symbol, result
+  end
 end
