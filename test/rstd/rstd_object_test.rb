@@ -10,6 +10,7 @@ class RstdObjectTest < Minitest::Test
 
   def test_rstd_object_refine_method?
     # Check given method is refined?
+    p RUBY_VERSION
     if RUBY_VERSION > "2.4" && "2.7" > RUBY_VERSION
       assert_raises RuntimeError do
         @obj.refine_method?(:present)
