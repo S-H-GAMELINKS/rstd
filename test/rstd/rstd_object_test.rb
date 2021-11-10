@@ -12,7 +12,7 @@ class RstdObjectTest < Minitest::Test
     # Check given method is refined?
     if RUBY_VERSION > "2.4" && "2.7" > RUBY_VERSION
       assert_raises RuntimeError do
-        @obj.refine_method?(:halo)
+        @obj.refine_method?(:present)
       end
     else
       result = @obj.refine_method?(:present?)
