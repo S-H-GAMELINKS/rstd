@@ -48,7 +48,7 @@ module Rstd::RefineArray
     end
 
     def all_values_dup?
-      self.uniq.size == 1 ? true : false
+      self.uniq.size == 1
     end
 
     def all_nil?
